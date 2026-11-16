@@ -5,6 +5,9 @@
   --mute: #a3a6b8;
   --amber: #f2a541; /* waiting */
   --sage: #8fb996;  /* walking away */
+  /* Chart-only pair: checked for colour-blind separation and contrast on --card. */
+  --chart-pass: #cf7f2a;
+  --chart-back: #2fa58a;
 }
 
 * { box-sizing: border-box; }
@@ -84,3 +87,43 @@ input::placeholder { color: var(--mute); }
 .btn.quiet { background: transparent; color: var(--ink); border: 1px solid var(--mute); }
 .btn:disabled { color: var(--mute); border-color: var(--card); cursor: default; }
 :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* Stats */
+h2 { margin: 0 0 10px; color: var(--mute); font-size: 15px; font-weight: 600; }
+.card { background: var(--card); border-radius: 18px; padding: 16px; text-align: left; }
+.card.center { text-align: center; }
+.big { font-size: 64px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--bg); }
+li:first-child { border-top: 0; }
+li span:last-child { color: var(--mute); font-variant-numeric: tabular-nums; }
+
+.legend { display: flex; gap: 16px; margin-bottom: 12px; color: var(--mute); font-size: 13px; }
+.sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 3px; }
+.pass { background: var(--chart-pass); }
+.back { background: var(--chart-back); }
+
+.chart { display: flex; align-items: flex-end; gap: 6px; height: 140px; margin-bottom: 8px; }
+.col {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mute);
+  font: inherit;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  cursor: pointer;
+}
+.col.on { color: var(--ink); font-weight: 600; }
+.stack { display: flex; flex-direction: column-reverse; gap: 2px; width: 60%; max-width: 22px; }
+.stack i { display: block; }
+.stack i:last-child { border-radius: 4px 4px 0 0; }
+.stack .none { height: 2px; border-radius: 0; background: var(--mute); opacity: 0.4; }

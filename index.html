@@ -29,8 +29,27 @@
 
 <main id="home" hidden>
   <h1>Slowdoor</h1>
-  <p id="h-today"></p>
-  <p class="hint">Gate link for Shortcuts:<br><code id="h-url"></code></p>
+
+  <section class="card center">
+    <h2>Focus score today</h2>
+    <p class="big" id="h-score"></p>
+    <p class="hint" id="h-streak"></p>
+  </section>
+
+  <section class="card">
+    <h2>Today</h2>
+    <ul id="h-apps"></ul>
+  </section>
+
+  <section class="card">
+    <h2>Gate visits, last 7 days</h2>
+    <p class="legend">
+      <span><i class="sw pass"></i>Opened anyway</span>
+      <span><i class="sw back"></i>Walked away</span>
+    </p>
+    <div class="chart" id="h-chart"></div>
+    <p class="hint" id="h-day" aria-live="polite"></p>
+  </section>
 </main>
 
 <noscript><main><p>Slowdoor needs JavaScript.</p></main></noscript>

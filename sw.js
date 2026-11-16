@@ -20,7 +20,7 @@ self.addEventListener('fetch', (e) => {
   const key = url.origin + url.pathname; // ignore ?app=... so every gate visit shares one cache entry
   e.respondWith(
     caches.match(key).then((hit) => {
-      const fresh = fetch(e.request)
+      const fresh = fetch(e.request, { cache: 'no-cache' }) // revalidate, or the host's 10-minute cache hides new deploys
         .then((res) => {
           if (res.ok) caches.open(CACHE).then((c) => c.put(key, res.clone()));
           return res;

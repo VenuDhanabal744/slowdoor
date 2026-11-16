@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Slowdoor</title>
+<meta name="theme-color" content="#14161f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="gate" hidden>
+  <p class="eyebrow" id="g-count"></p>
+  <h1 id="g-title"></h1>
+  <div class="ring" id="g-ring" role="timer" aria-label="Seconds left"><span id="g-secs"></span></div>
+  <label for="g-why">What are you opening this for?</label>
+  <input id="g-why" type="text" autocomplete="off" maxlength="120" placeholder="e.g. reply to a message">
+  <button id="g-back" class="btn primary" type="button">Never mind</button>
+  <button id="g-open" class="btn quiet" type="button" disabled>Open anyway</button>
+  <p class="hint" id="g-hint" aria-live="polite"></p>
+</main>
+
+<main id="done" hidden>
+  <h1>Good call.</h1>
+  <p class="hint">Swipe up and get on with your day.</p>
+</main>
+
+<main id="home" hidden>
+  <h1>Slowdoor</h1>
+  <p id="h-today"></p>
+  <p class="hint">Gate link for Shortcuts:<br><code id="h-url"></code></p>
+</main>
+
+<noscript><main><p>Slowdoor needs JavaScript.</p></main></noscript>
+<script type="module" src="app.js"></script>
+</body>
+</html>

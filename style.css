@@ -1,0 +1,86 @@
+:root {
+  --bg: #14161f;    /* ink */
+  --card: #23273a;
+  --ink: #f2ebdd;   /* sand */
+  --mute: #a3a6b8;
+  --amber: #f2a541; /* waiting */
+  --sage: #8fb996;  /* walking away */
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.45 -apple-system, system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+[hidden] { display: none !important; }
+
+main {
+  min-height: 100dvh;
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+h1 { font-size: 30px; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.eyebrow { color: var(--amber); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.hint { color: var(--mute); font-size: 15px; min-height: 1.45em; }
+code { color: var(--ink); font-size: 13px; word-break: break-all; }
+
+.ring {
+  --p: 0;
+  width: 176px;
+  height: 176px;
+  margin: 8px auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--amber) calc(var(--p) * 1turn), var(--card) 0);
+}
+.ring span {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  font-size: 64px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+label { color: var(--mute); font-size: 15px; }
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--card);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit; /* 17px: under 16px iOS zooms the page on focus */
+  text-align: center;
+}
+input::placeholder { color: var(--mute); }
+
+.btn {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.primary { background: var(--sage); color: var(--bg); }
+.btn.quiet { background: transparent; color: var(--ink); border: 1px solid var(--mute); }
+.btn:disabled { color: var(--mute); border-color: var(--card); cursor: default; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
